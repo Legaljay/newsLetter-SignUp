@@ -48,8 +48,8 @@ label{font-weight: 400;margin-top: 2rem;}
 .savage > img{width: max(50%, 100%);}
 /* .savage{background: url(assets/images/illustration-sign-up-desktop.svg) no-repeat ;} */
 /*form{display: grid; grid-template-columns: 1fr;}*/
-input[type=email],input[type=button], button { font-size: large; padding: 15px; border-radius:10px ; -webkit-border-radius:10px ; -moz-border-radius:10px ; -ms-border-radius:10px ; -o-border-radius:10px ; margin-top: .5rem;border: 1px solid var(--Grey); }
-input[type=button], button{color: var(--White); background-color: var(--Charcoal-Grey); margin-top: 1rem;border: none;}
+input[type=email],.btn, button { font-size: large; padding: 15px; border-radius:10px ; -webkit-border-radius:10px ; -moz-border-radius:10px ; -ms-border-radius:10px ; -o-border-radius:10px ; margin-top: .5rem;border: 1px solid var(--Grey); }
+.btn, button{color: var(--White); background-color: var(--Charcoal-Grey); margin-top: 1rem;border: none;}
 .hide, .active, #mobile{display:none;}
 .text-success{ background-color: var(--White); display: grid; grid-template-columns: 1fr; grid-gap: 1rem; width: max(25%); border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -ms-border-radius: 40px; -o-border-radius: 40px; padding: 2rem; }
 .icon{width:40px;}
@@ -67,7 +67,7 @@ input[type=button], button{color: var(--White); background-color: var(--Charcoal
     label{margin-top: 0.8rem;}
     .image1{display: none;}
     #mobile{display: block;}
-    input[type=button]{font-size: 14px; margin-top: .5rem;}
+    .btn{font-size: 14px; margin-top: .5rem;}
     .text-success{width: 90%;margin: 0 auto;padding: 0; margin-top: 8em;}
     .icon{width: 20%;}
     .text{margin-bottom: 6rem;} button{margin-top: 6rem;}
