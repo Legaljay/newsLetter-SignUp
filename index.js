@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.btn'); 
     const input = document.querySelector('[type=email]');
     const dismiss = document.querySelector('.submit'); 
+    const output = document.querySelector('.output-mail');
 
     let active = false;
 
@@ -88,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         active = pattern.test(email);
         if(active){
+
+        output.textContent = email; 
         changeBorderColor(true);
         changeTextColor(true);
         clearErrorMessages();
@@ -133,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dismiss.addEventListener('click', () => {
         if (active){
+            
             card.classList.remove('active');
             textSuccess.classList.remove('text-success');
             textSuccess.classList.add('active');
