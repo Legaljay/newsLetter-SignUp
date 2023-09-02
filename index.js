@@ -106,13 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });*/
 
+    input.addEventListener('input', (e) => {
+        e.preventDefault();
+        let email = input.value;
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        active = pattern.test(email);
+        
+        if(active){
+            changeBorderColor(true);
+            clearErrorMessages();
+            changeTextColor(true);
+        }
+    })
+
     function changeBorderColor(valid) {
-        input.style.borderColor = valid ? 'initial' : 'red';
-        input.placeholder.style.color = valid ? '' : '';
-        if(valid){
-        input.classList.remove('invalid');
+        //input.style.borderColor = valid ? 'initial' : 'red';
+        //input.placeholder.style.color = valid ? 'initial' : 'var(--Tomato)';
+        if(!valid){
+        input.classList.add('invalid');
         }else{
-            input.classList.add('invalid');
+            input.classList.remove('invalid');
         }
 
     }
@@ -129,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         active = pattern.test(email);
 
-
+        
         if (active){
         output.textContent = email;
         card.classList.add('active');
