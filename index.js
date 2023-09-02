@@ -83,27 +83,38 @@ document.addEventListener('DOMContentLoaded', () => {
         error.textContent = '';
     }
 
-    input.addEventListener('input', (e) => {
+    /*input.addEventListener('input', (e) => {
         let email = e.target.value;
         //const pattern = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', 'g');
         const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         active = pattern.test(email);
+
         if(active){
 
         output.textContent = email; 
         changeBorderColor(true);
         changeTextColor(true);
         clearErrorMessages();
+        input.classList.remove('invalid');
 
         }else{
             changeBorderColor(false);
             changeTextColor(false);
             showErrorMessages('Valid email required')
+            input.classList.add('invalid');
+            
         }
-    });
+    });*/
 
     function changeBorderColor(valid) {
         input.style.borderColor = valid ? 'initial' : 'red';
+        input.placeholder.style.color = valid ? '' : '';
+        if(valid){
+        input.classList.remove('invalid');
+        }else{
+            input.classList.add('invalid');
+        }
+
     }
 
     const error = document.querySelector('.error');
@@ -112,10 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
         error.style.color = valid ? 'initial' : 'red';
     }
 
-    button.addEventListener('click', () => {
-        console.log(active);
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        let email = input.value;
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        active = pattern.test(email);
+
 
         if (active){
+        output.textContent = email;
         card.classList.add('active');
         textSuccess.classList.remove('active');
         textSuccess.classList.add('text-success');
@@ -131,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
             changeTextColor(false);
         }
 
-    
     })
 
     dismiss.addEventListener('click', () => {
